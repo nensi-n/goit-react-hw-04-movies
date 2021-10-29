@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-// import "modern-normalize/modern-normalize.css";
-// import "react-toastify/dist/ReactToastify.css";
+import "modern-normalize/modern-normalize.css";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
   <React.StrictMode>

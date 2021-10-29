@@ -5,6 +5,8 @@ import {
   Route,
   useRouteMatch,
   Switch,
+  useHistory,
+  useLocation,
 } from "react-router-dom";
 import Cast from "../Cast/Cast";
 import Reviews from "../Reviews/Reviews";
@@ -13,6 +15,8 @@ import * as filmsAPI from "../../services/films-api";
 import "./MovieDetailsPage.css";
 
 export default function MovieDetailsPage() {
+  const history = useHistory();
+  const location = useLocation();
   const { movieId } = useParams();
   const { url, path } = useRouteMatch();
   const [movie, setMovie] = useState(null);
@@ -21,12 +25,20 @@ export default function MovieDetailsPage() {
     filmsAPI.fetchMovieDetails(movieId).then(setMovie);
   }, [movieId]);
 
+  const handleGoBack = () => {
+    history.push(location?.state?.from ?? "/");
+  };
+
   return (
     <>
       {/* <PageHeading text={`Film ${movieId}`} /> */}
 
       {movie && (
         <>
+          <button onClick={handleGoBack} type="button" className="button">
+            Go back
+          </button>
+
           <h2>{movie.title}</h2>
           <img
             src={`${filmsAPI.POSTER_URL}/${movie.poster_path}`}
@@ -51,7 +63,10 @@ export default function MovieDetailsPage() {
 
           <nav>
             <NavLink
-              to={`${url}/cast`}
+              to={{
+                pathname: `${url}/cast`,
+                state: { from: location?.state?.from ?? "/" },
+              }}
               className="link"
               activeClassName="active-link"
             >
@@ -60,7 +75,10 @@ export default function MovieDetailsPage() {
             <br></br>
 
             <NavLink
-              to={`${url}/reviews`}
+              to={{
+                pathname: `${url}/reviews`,
+                state: { from: location?.state?.from ?? "/" },
+              }}
               className="link"
               activeClassName="active-link"
             >
