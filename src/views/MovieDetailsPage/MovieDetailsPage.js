@@ -31,8 +31,6 @@ export default function MovieDetailsPage() {
 
   return (
     <>
-      {/* <PageHeading text={`Film ${movieId}`} /> */}
-
       {movie && (
         <>
           <button onClick={handleGoBack} type="button" className="button">
