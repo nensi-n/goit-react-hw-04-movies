@@ -1,0 +1,10 @@
+.cast-list {
+  display: flex;
+  list-style: none;
+}
+
+.list__element {
+  width: 274px;
+  height: 100%;
+  margin: 15px;
+}

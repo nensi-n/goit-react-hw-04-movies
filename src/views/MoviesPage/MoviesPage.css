@@ -1,0 +1,16 @@
+.data-container {
+  display: flex;
+  margin: -15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list__element {
+  width: 274px;
+  height: 100%;
+  margin: 15px;
+}
+
+ul {
+  list-style: none;
+}

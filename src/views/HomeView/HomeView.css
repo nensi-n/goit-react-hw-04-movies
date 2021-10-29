@@ -1,0 +1,35 @@
+.data-container {
+  display: flex;
+  margin: -15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.list__element {
+  width: 274px;
+  height: 100%;
+  margin: 15px;
+}
+
+.element__name {
+  margin-bottom: 5px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.heading-name {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 19px;
+}
